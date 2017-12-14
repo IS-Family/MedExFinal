@@ -1,0 +1,82 @@
+﻿@model MedExFinal.Models.Doctor
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Doctor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DocPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DocPhone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DocAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DocAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DocCity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DocCity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DocState)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DocState)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DocZip)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DocZip)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DocEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DocEmail)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DoctorId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
