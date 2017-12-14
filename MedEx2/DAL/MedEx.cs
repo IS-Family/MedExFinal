@@ -17,5 +17,6 @@ namespace MedEx2.DAL
 
         public DbSet<Doctor> Doctors { get; set; }
         public DbSet<Certificate> Certificates { get; set; }
+        public DbSet<CompletedCert> CompletedCert { get; set; }
     }
 }
