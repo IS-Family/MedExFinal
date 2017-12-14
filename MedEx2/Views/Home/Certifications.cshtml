@@ -1,0 +1,73 @@
+﻿@model MedEx2.Models.Certifications_CertComplete
+
+@{
+    ViewBag.Title = "Certifications";
+}
+
+<h2>Certifications</h2>
+@if (Model == null)
+{ <br />}
+else
+{
+<table class="table">
+    <tr>
+        <th>
+            Certification ID
+        </th>
+        <th>
+            File Path
+        </th>
+        <th>
+            Expiration Date
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var cert in Model.CompletedCerts)
+    {
+        if (cert.DoctorID == ViewBag.DoctorId)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => cert.CertID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => cert.FilePath)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => cert.ExpirationDate)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = cert.CertID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = cert.CertID })
+                </td>
+            </tr>
+        }
+    }
+</table>
+}
+
+<select class="form-control" id="Certificate" name="Certificate">
+    <option></option>
+    @foreach (var type in Model.Certificates)
+    {
+        <option>@Html.DisplayFor(modelItem => type.CertName)</option>
+    }
+</select>
+
+@using (Html.BeginForm("UploadFile", "Upload", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    <div>
+        @Html.TextBox("file", "", new { type = "file" }) <br />
+
+        <input type="submit" value="Upload" />
+
+        @ViewBag.Message
+
+    </div>
+
+
+}  
+
+
