@@ -7,7 +7,7 @@ using System.Web;
 
 namespace MedExFinal.Models
 {
-    [Table("Certificate")]
+    [Table("Certification")]
     public class Certificate
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]

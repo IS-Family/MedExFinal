@@ -22,7 +22,7 @@ namespace MedExFinal.Models
         [ForeignKey("DoctorID")]
         public virtual Doctor Doctors { get; set; }
 
-        public String FilePath { get; set; }
+        public byte[] FilePath { get; set; }
         public DateTime ExpirationDate { get; set; }
     }
 }
