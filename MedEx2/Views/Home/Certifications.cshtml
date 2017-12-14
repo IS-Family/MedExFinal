@@ -55,7 +55,7 @@ else
     }
 </select>
 
-@using (Html.BeginForm("UploadFile", "Upload", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("UploadFile", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
 
     <div>
@@ -66,8 +66,11 @@ else
         @ViewBag.Message
 
     </div>
-
-
+    <br />
+        @Html.TextBoxFor(Model => Model.CompletedCerts, new { type = "date" })
+    <br />
 }  
+
+
 
 

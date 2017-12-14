@@ -11,7 +11,7 @@ using System.IO;
 
 namespace MedEx2.Controllers
 {
-    
+
     public class HomeController : Controller
     {
         private MedExContext db = new MedExContext();
@@ -33,7 +33,7 @@ namespace MedEx2.Controllers
 
             return View();
         }
-        
+
         public ActionResult Certifications(int DoctorId = 1)
         {
             Certifications_CertComplete certifications_CertComplete = new Certifications_CertComplete();
@@ -46,25 +46,15 @@ namespace MedEx2.Controllers
             ViewBag.Certs = db.Certificates.ToList();
             return View(certifications_CertComplete);
         }
-
-        namespace FileUpload.Controllers
-    {
-        public class UploadController : Controller
-        {
-            // GET: Upload  
-            public ActionResult Index()
-            {
-                return View();
-            }
             [HttpGet]
 
-            public ActionResult UploadFile()
-            {
+        public ActionResult UploadFile()
+        {
                 return View();
-            }
+        }
             [HttpPost]
 
-            public ActionResult UploadFile(HttpPostedFileBase file)
+        public ActionResult UploadFile(HttpPostedFileBase file)
             {
                 try
                 {
@@ -82,8 +72,6 @@ namespace MedEx2.Controllers
                     ViewBag.Message = "File upload failed!!";
                     return View();
                 }
-            }
         }
     }
-}
 }
