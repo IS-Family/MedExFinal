@@ -29,5 +29,9 @@ namespace MedEx2.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<MedEx2.Models.Doctor> Doctors { get; set; }
+
+        public System.Data.Entity.DbSet<MedEx2.Models.CompletedCert> CompletedCerts { get; set; }
     }
 }

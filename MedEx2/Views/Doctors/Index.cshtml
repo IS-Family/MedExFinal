@@ -1,0 +1,75 @@
+﻿@model IEnumerable<MedEx2.Models.Doctor>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DocAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DocCity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DocState)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DocZip)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DocPhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DocEmail)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DocAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DocCity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DocState)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DocZip)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DocPhone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DocEmail)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DoctorId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DoctorId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DoctorId })
+        </td>
+    </tr>
+}
+
+</table>
