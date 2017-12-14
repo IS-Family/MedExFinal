@@ -34,6 +34,7 @@ namespace MedEx2.Controllers
             return View();
         }
 
+        [HttpGet]
         public ActionResult Certifications(int DoctorId = 1)
         {
             Certifications_CertComplete certifications_CertComplete = new Certifications_CertComplete();
@@ -46,6 +47,13 @@ namespace MedEx2.Controllers
             ViewBag.Certs = db.Certificates.ToList();
             return View(certifications_CertComplete);
         }
+
+        [HttpPost]
+        public ActionResult Certifications(int DoctorId, string _path)
+        {
+
+            return View();
+        }
             [HttpGet]
 
         public ActionResult UploadFile()
@@ -54,18 +62,29 @@ namespace MedEx2.Controllers
         }
             [HttpPost]
 
-        public ActionResult UploadFile(HttpPostedFileBase file)
+        public ActionResult UploadFile(HttpPostedFileBase file, int DoctorId)
             {
-                try
-                {
+            string _FileName = Path.GetFileName(file.FileName);
+            string _path = Path.Combine(Server.MapPath("~/UploadedFiles/" + DoctorId), _FileName);
+            ViewBag.DoctorId = DoctorId;
+            try
+            {
                     if (file.ContentLength > 0)
                     {
-                        string _FileName = Path.GetFileName(file.FileName);
-                        string _path = Path.Combine(Server.MapPath("~/UploadedFiles"), _FileName);
-                        file.SaveAs(_path);
+                        
+                        string checkFile = Server.MapPath("~/UploadedFiles/" + DoctorId);
+                        _path = Path.Combine(Server.MapPath("~/UploadedFiles/"+ DoctorId), _FileName);
+                        if (Directory.Exists(checkFile))
+                        {
+                            file.SaveAs(_path);
+                        }
+                        else
+                        {
+                            Directory.CreateDirectory("~/UploadedFiles/" + DoctorId);
+                        }
                     }
                     ViewBag.Message = "File Uploaded Successfully!!";
-                    return View();
+                    return View(_path);
                 }
                 catch
                 {

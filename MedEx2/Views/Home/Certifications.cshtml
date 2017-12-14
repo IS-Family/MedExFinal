@@ -55,7 +55,7 @@ else
     }
 </select>
 
-@using (Html.BeginForm("UploadFile", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("UploadFile", "Home", FormMethod.Post, new { ViewBag.DoctorId, enctype = "multipart/form-data"}))
 {
 
     <div>
