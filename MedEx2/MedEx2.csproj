@@ -204,6 +204,13 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\img\carousel 1.jpg" />
+    <Content Include="Content\img\carousel 2.jpg" />
+    <Content Include="Content\img\carousel 3.jpg" />
+    <Content Include="Content\img\carousel 4.jpg" />
+    <Content Include="Content\img\carousel 5.jpg" />
+    <Content Include="Content\img\CHMB_Logo.jpg" />
+    <Content Include="Content\img\healthcare.jpeg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
